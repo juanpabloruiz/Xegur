@@ -1,1 +1,1 @@
-<?php $conexion = new mysqli('localhost', 'root', 'sole', 'xegur'); ?>
+<?php $conexion = new mysqli('localhost', 'root', 'soledad', 'xegur'); ?>
