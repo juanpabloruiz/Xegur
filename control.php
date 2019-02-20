@@ -42,7 +42,7 @@ include('conexion.php');
 
 	
 
-	<<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
                 <div class="container-fluid">
                   <!-- Brand and toggle get grouped for better mobile display -->
                   <div class="navbar-header">
@@ -165,10 +165,10 @@ if(isset($_GET['oficina'])) {
 		$fecha = date('Y-m-d');
 		if($campo['oficina'] == 'NO') {
 			mysqli_query($conexion, "UPDATE usuarios SET oficina = 'SI', fecha = '$fecha' WHERE legislador = '$oficina' AND  fecha = '$fecha'");
-			echo '<script>window.location="./control"</script>';
+			echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 		} elseif($campo['oficina'] == 'SI') {
 			mysqli_query($conexion, "UPDATE usuarios SET oficina = 'NO', fecha = '$fecha' WHERE legislador = '$oficina' AND  fecha = '$fecha'");
-			echo '<script>window.location="./control"</script>';
+			echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 		}
 	}
 }
@@ -193,10 +193,10 @@ if(isset($_GET['legislador'])) {
 		if($hora < '13:00') {
 			if($campo['estado'] == 'PRESENTE') {
 				mysqli_query($conexion, "UPDATE usuarios SET estado = 'AUSENTE', manana = CONCAT(manana,' S') WHERE legislador = '$legislador' AND fecha = '$fecha'");
-				echo '<script>window.location="./control"</script>';
+				echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 			} elseif($campo['estado'] == 'AUSENTE') {
 				mysqli_query($conexion, "UPDATE usuarios SET estado = 'PRESENTE', manana = CONCAT(manana,' E') WHERE legislador = '$legislador' AND fecha = '$fecha'");
-				echo '<script>window.location="./control"</script>';
+				echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 			}
 		}
 
@@ -204,10 +204,10 @@ if(isset($_GET['legislador'])) {
 		if($hora > '13:00' && $hora < '16:00') {
 			if($campo['estado'] == 'PRESENTE') {
 				mysqli_query($conexion, "UPDATE usuarios SET estado = 'AUSENTE', intermedio = CONCAT(intermedio,' S') WHERE legislador = '$legislador' AND fecha = '$fecha'");
-				echo '<script>window.location="./control"</script>';
+				echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 			} elseif($campo['estado'] == 'AUSENTE') {
 				mysqli_query($conexion, "UPDATE usuarios SET estado = 'PRESENTE', intermedio = CONCAT(intermedio,' E') WHERE legislador = '$legislador' AND fecha = '$fecha'");
-				echo '<script>window.location="./control"</script>';
+				echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 			}
 		}
 
@@ -215,10 +215,10 @@ if(isset($_GET['legislador'])) {
 		if($hora > '16:00' & $hora < '21:00') {
 			if($campo['estado'] == 'PRESENTE') {
 				mysqli_query($conexion, "UPDATE usuarios SET estado = 'AUSENTE', tarde = CONCAT(tarde,' S') WHERE legislador = '$legislador' AND fecha = '$fecha'");
-				echo '<script>window.location="./control"</script>';
+				echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 			} elseif($campo['estado'] == 'AUSENTE') {
 				mysqli_query($conexion, "UPDATE usuarios SET estado = 'PRESENTE', tarde = CONCAT(tarde,' E') WHERE legislador = '$legislador' AND fecha = '$fecha'");
-				echo '<script>window.location="./control"</script>';
+				echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 			}
 		}
 
@@ -269,7 +269,7 @@ if(isset($_GET['legislador'])) {
 		
 
 		<tr>
-			<td>
+			<td id="<?php echo $campo['legislador']; ?>">
 				<?php if($campo['oficina'] == 'SI') { ?>
 				<a href="?oficina=<?php echo $campo['legislador']; ?>" class="btn btn-success btn-block"><?php echo $campo['oficina']; ?></a>
 				<?php } elseif($campo['oficina'] == 'NO') { ?>
@@ -315,7 +315,7 @@ if(isset($_GET['legislador'])) {
 		
 
 		<tr>
-			<td>
+			<td id="<?php echo $campo['legislador']; ?>">
 				<?php if($campo['oficina'] == 'SI') { ?>
 				<a href="?oficina=<?php echo $campo['legislador']; ?>" class="btn btn-success btn-block"><?php echo $campo['oficina']; ?></a>
 				<?php } elseif($campo['oficina'] == 'NO') { ?>
