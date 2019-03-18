@@ -13,16 +13,8 @@ include('conexion.php');
 	<meta name="viewport" content="width=device-width,intial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	
-	<script src="js/jquery-3.3.1.min.js"></script>
-
-
-	
-	
-
-	
-	<script src="js/bootstrap.min.js"></script>
-	
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 	<style>
 	@media print{
 		a:after {
@@ -42,44 +34,23 @@ include('conexion.php');
 
 	
 
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-                <div class="container-fluid">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="./">Xegur</a>
-                  </div>
-              
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li class="active"><a href="../">Inicio <span class="sr-only">(current)</span></a></li>
-                      <li><a href="post.php?id=145">Acerca de</a></li>
-                      <li><a href="salir">Salir</a></li>
-                      
-                    </ul>
-                    
-                    <ul class="nav navbar-nav navbar-right">
-                        
-                      <li><a href="/admin">Panel de control</a></li>
-                      
-                    </ul>
-                  </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-              </nav>
+<div class="container-fluid">
+
+
+
+<style>
+
+
+.affix {
+  right: 0;
+}
 
 
 
 
+</style>
 
 
-
-<div class="container-fluid top">
 
 
 
@@ -96,52 +67,52 @@ if ($resultado->num_rows === 0) {
 	
     date_default_timezone_set('America/Argentina/Buenos_Aires');
 	$fecha = date('Y-m-d');
-    mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'CANTEROS', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'ALTERATS', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'BOFFIL', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'BREARD', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'COLOMBI', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'DOS SANTOS', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'SUAREZ', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'FLINTA', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'GIRAUD', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'INSAURRALDE', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NAZAR', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'MARTINEZ LLANO', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'MIÑO', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'RODRIGUEZ', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'SAND GIORASI', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'SEWARD', 'senador', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'ACEVEDO', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'AGUIRRE', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'BESTARD', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'CASSANI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'BAEZ', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'CHAIN', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'BARRIONUEVO', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'FERNANDEZ AFFUR', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'GAYA', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'GARCIA', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'GIRAUD CABRAL', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'LOCATELLI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'LOPEZ', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'MEIXNER', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'MANCINI FRATTI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'BASSI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'MOLINA', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'CENTURION', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'MORTOLA', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'GODOY', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'CALVI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'PACAYUT', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'PELLEGRINI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'SAEZ', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'PEREYRA CEBREIRO', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'YARDIN', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'POZO', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'RAMIREZ', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'ROTELA CAÑETE', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
-	mysqli_query($conexion, "INSERT INTO usuarios (oficina, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'VISCHI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+    mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'CANTEROS', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'ALTERATS', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'BOFFIL', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'BREARD', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'COLOMBI', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'DOS SANTOS', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'SUAREZ', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'FLINTA', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'GIRAUD', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'INSAURRALDE', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'NAZAR', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'MARTINEZ LLANO', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'MIÑO', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'RODRIGUEZ', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'SAND GIORASI', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'SEWARD', 'senador', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'ACEVEDO', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'AGUIRRE', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'BESTARD', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'CASSANI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'BAEZ', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'CHAIN', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'BARRIONUEVO', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'FERNANDEZ AFFUR', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'GAYA', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'GARCIA', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'GIRAUD CABRAL', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'LOCATELLI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'LOPEZ', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'MEIXNER', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'MANCINI FRATTI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'BASSI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'MOLINA', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'CENTURION', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'MORTOLA', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'GODOY', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'CALVI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'PACAYUT', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'PELLEGRINI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'SAEZ', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'PEREYRA CEBREIRO', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'YARDIN', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'POZO', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'RAMIREZ', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'ROTELA CAÑETE', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
+	mysqli_query($conexion, "INSERT INTO usuarios (oficina, vehiculo, legislador, categoria, estado, manana, intermedio, tarde, fecha) VALUES ('NO', 'NO', 'VISCHI', 'diputado', 'AUSENTE', '', '', '', '$fecha')");
 	
 }
 
@@ -168,6 +139,22 @@ if(isset($_GET['oficina'])) {
 			echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 		} elseif($campo['oficina'] == 'SI') {
 			mysqli_query($conexion, "UPDATE usuarios SET oficina = 'NO', fecha = '$fecha' WHERE legislador = '$oficina' AND  fecha = '$fecha'");
+			echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
+		}
+	}
+}
+
+// Vehículo
+if(isset($_GET['vehiculo'])) {
+	$vehiculo = $_GET['vehiculo'];
+	$usuarios = mysqli_query($conexion, "SELECT * FROM usuarios WHERE legislador = '$vehiculo' AND  fecha = '$fecha'");
+	while($campo = mysqli_fetch_array($usuarios)) {
+		$fecha = date('Y-m-d');
+		if($campo['vehiculo'] == 'NO') {
+			mysqli_query($conexion, "UPDATE usuarios SET vehiculo = 'SI', fecha = '$fecha' WHERE legislador = '$vehiculo' AND  fecha = '$fecha'");
+			echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
+		} elseif($campo['oficina'] == 'SI') {
+			mysqli_query($conexion, "UPDATE usuarios SET vehiculo = 'NO', fecha = '$fecha' WHERE legislador = '$vehiculo' AND  fecha = '$fecha'");
 			echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 		}
 	}
@@ -228,35 +215,16 @@ if(isset($_GET['legislador'])) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="row">
 
-<div class="col-md-8">
+<div class="tall-div col-lg-6">
 
 	<table class="table table-bordered table-sm">
 
 
 		<tr>
 			<th class="text-center">Oficina</th>
+			<th class="text-center">Vehículo</th>
 			<th class="text-center">Senador/a</th>
 			<th class="text-center">Mañana</th>
 			<th class="text-center">Intermedio</th>
@@ -274,6 +242,13 @@ if(isset($_GET['legislador'])) {
 				<a href="?oficina=<?php echo $campo['legislador']; ?>" class="btn btn-success btn-block"><?php echo $campo['oficina']; ?></a>
 				<?php } elseif($campo['oficina'] == 'NO') { ?>
 				<a href="?oficina=<?php echo $campo['legislador']; ?>" class="btn btn-danger btn-block"><?php echo $campo['oficina']; ?></a>
+				<?php } ?>
+			</td>
+			<td id="<?php echo $campo['legislador']; ?>">
+				<?php if($campo['vehiculo'] == 'SI') { ?>
+				<a href="?vehiculo=<?php echo $campo['legislador']; ?>" class="btn btn-success btn-block"><?php echo $campo['vehiculo']; ?></a>
+				<?php } elseif($campo['vehiculo'] == 'NO') { ?>
+				<a href="?vehiculo=<?php echo $campo['legislador']; ?>" class="btn btn-danger btn-block"><?php echo $campo['vehiculo']; ?></a>
 				<?php } ?>
 			</td>
 			<td>
@@ -303,6 +278,7 @@ if(isset($_GET['legislador'])) {
 
 		<tr>
 			<th class="text-center">Oficina</th>
+			<th class="text-center">Vehículo</th>
 			<th class="text-center">Diputado/a</th>
 			<th class="text-center">Mañana</th>
 			<th class="text-center">Intermedio</th>
@@ -322,6 +298,13 @@ if(isset($_GET['legislador'])) {
 				<a href="?oficina=<?php echo $campo['legislador']; ?>" class="btn btn-danger btn-block"><?php echo $campo['oficina']; ?></a>
 				<?php } ?>
 			</td>
+			<td id="<?php echo $campo['legislador']; ?>">
+				<?php if($campo['vehiculo'] == 'SI') { ?>
+				<a href="?vehiculo=<?php echo $campo['legislador']; ?>" class="btn btn-success btn-block"><?php echo $campo['vehiculo']; ?></a>
+				<?php } elseif($campo['vehiculo'] == 'NO') { ?>
+				<a href="?vehiculo=<?php echo $campo['legislador']; ?>" class="btn btn-danger btn-block"><?php echo $campo['vehiculo']; ?></a>
+				<?php } ?>
+			</td>			
 			<td>
 				<?php if($campo['estado'] == 'PRESENTE') { ?>
 				<a href="?legislador=<?php echo $campo['legislador']; ?>" class="btn btn-success btn-block"><?php echo $campo['legislador']; ?></a>
@@ -345,7 +328,9 @@ if(isset($_GET['legislador'])) {
 
 	</div>
 
-	<div class="col-md-4">
+	
+	<div class="col-lg-6 col-sm-6 col-md-6"  data-spy="affix">
+	
 
 	<?php
 	$fecha = date('Y-m-d');
@@ -353,11 +338,13 @@ if(isset($_GET['legislador'])) {
 	while($campo = mysqli_fetch_array($observaciones)) {
 		?>
 	
-
-	<h4>Observaciones</h4>
+	<a href="salir" class="btn btn-danger pull-right">Cerrar sesión</a>
 	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-		<div class="form-group"><textarea rows="10" class="form-control" name="detalles" placeholder="Observaciones..."><?php echo $campo['detalles']; ?></textarea></div>
-		<div class="form-group"><input type="submit" name="submit" id="submit" value="Guardar" class="btn btn-primary"></div>
+	
+	<h4>Observaciones</h4>
+	<div class="form-group"><input type="submit" name="submit" id="submit" value="Guardar" class="btn btn-primary"></div>
+		<div class="form-group"><textarea rows="10" cols="50%" class="form-control" name="detalles" placeholder="Observaciones..."><?php echo $campo['detalles']; ?></textarea></div>
+		
 	</form>
 
 		<?php } 
