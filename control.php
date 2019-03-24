@@ -16,6 +16,9 @@ include('conexion.php');
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 	<style>
+	.affix {
+  right: 0;
+}
 	@media print{
 		a:after {
 			
@@ -31,25 +34,8 @@ include('conexion.php');
 	</style>
 </head>
 <body>
-
 	
-
-<div class="container-fluid">
-
-
-
-<style>
-
-
-.affix {
-  right: 0;
-}
-
-
-
-
-</style>
-
+	<div class="container-fluid">
 
 
 
@@ -219,6 +205,8 @@ elseif(isset($_GET['legislador'])) {
 
 <div class="tall-div col-lg-6">
 
+<!-- Senadores -->
+
 	<table class="table table-bordered table-sm">
 
 
@@ -229,6 +217,7 @@ elseif(isset($_GET['legislador'])) {
 			<th class="text-center">Mañana</th>
 			<th class="text-center">Intermedio</th>
 			<th class="text-center">Tarde</th>
+			<th class="text-center">Datos</th>
 		</tr>
 		
 
@@ -261,6 +250,7 @@ elseif(isset($_GET['legislador'])) {
 			<td><?php echo $campo['manana']; ?></td>
 			<td><?php echo $campo['intermedio']; ?></td>
 			<td><?php echo $campo['tarde']; ?></td>
+			<td><a href="#" class="btn btn-warning btn-block">BIO</a></td>
 		</tr>
 		
 
@@ -283,6 +273,7 @@ elseif(isset($_GET['legislador'])) {
 			<th class="text-center">Mañana</th>
 			<th class="text-center">Intermedio</th>
 			<th class="text-center">Tarde</th>
+			<th class="text-center">Datos</th>
 		</tr>
 		
 
@@ -315,6 +306,7 @@ elseif(isset($_GET['legislador'])) {
 			<td><?php echo $campo['manana']; ?></td>
 			<td><?php echo $campo['intermedio']; ?></td>
 			<td><?php echo $campo['tarde']; ?></td>
+			<td><a href="?bio=<?php echo $campo['legislador']; ?>" class="btn btn-warning btn-block">BIO</a></td>
 		</tr>
 		
 
@@ -330,34 +322,83 @@ elseif(isset($_GET['legislador'])) {
 
 	
 	<div class="col-lg-6 col-sm-6 col-md-6"  data-spy="affix">
-	
+	<a href="salir" class="btn btn-danger pull-right">Cerrar sesión</a>
 
 	<?php
 	$fecha = date('Y-m-d');
 	$observaciones = mysqli_query($conexion, "SELECT * FROM observaciones WHERE fecha = '$fecha'");
 	while($campo = mysqli_fetch_array($observaciones)) {
-		?>
-	
-	<a href="salir" class="btn btn-danger pull-right">Cerrar sesión</a>
+	?>
+		
 	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	
 	<h4>Observaciones</h4>
+	
 	<div class="form-group"><input type="submit" name="submit" id="submit" value="Guardar" class="btn btn-primary"></div>
-		<div class="form-group"><textarea rows="10" cols="50%" class="form-control" name="detalles" placeholder="Observaciones..."><?php echo $campo['detalles']; ?></textarea></div>
+	<div class="form-group"><textarea rows="10" cols="50%" class="form-control" name="detalles" placeholder="Observaciones..."><?php echo $campo['detalles']; ?></textarea></div>
 		
 	</form>
 
-		<?php } 
+	<?php } 
 		
-		// Actualizar observaciones
-if(isset($_POST['submit'])) {
-	$fecha = date('Y-m-d');
-$detalles = $_POST['detalles'];
-mysqli_query($conexion, "UPDATE observaciones SET detalles = '$detalles' WHERE fecha = '$fecha'");
-echo '<script>window.location="./control"</script>';
+	// Actualizar observaciones
+	if(isset($_POST['submit'])) {
+		$fecha = date('Y-m-d');
+	$detalles = $_POST['detalles'];
+	mysqli_query($conexion, "UPDATE observaciones SET detalles = '$detalles' WHERE fecha = '$fecha'");
+	echo '<script>window.location="./control"</script>';
+	} 
+
+
+
+
+	// Biografía
+
+	if(isset($_GET['bio'])) {
+	$bio = $_GET['bio'];
+	$legisladores = mysqli_query($conexion, "SELECT * FROM legisladores WHERE legislador = '$bio'");
+	while($campo = mysqli_fetch_array($legisladores)) {
+		
+	?>
+		
+	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+	
+	<h4>Bíografía</h4>
+	
+	<div class="form-group">
+    
+    <img src="#" alt="Foto" class="img-responsive" height="200" width="200">
+  </div>
+	
+	<div class="form-group">
+    <?php echo $campo['nombre']; ?>
+    <?php echo $campo['apellidos']; ?>
+  </div>	
+	
+  <div class="form-group">
+    <label for="patente">Patente</label>
+    <input type="text" class="form-control" id="patente" placeholder="Patente" value="<?php echo $campo['patente']; ?>">
+  </div>
+
+  <div class="form-group"><input type="submit" name="submit" id="submit" value="Guardar" class="btn btn-primary"></div>
+	</form>
+
+	<?php 
+		
 } 
+
+}
 		
+	
+	if(isset($_POST['submit'])) {
+		$fecha = date('Y-m-d');
+	$detalles = $_POST['detalles'];
+	mysqli_query($conexion, "UPDATE observaciones SET detalles = '$detalles' WHERE fecha = '$fecha'");
+	echo '<script>window.location="./control"</script>';
+	} 
 		?>
+
+		
 
 		</div>
 
