@@ -145,7 +145,7 @@ if(isset($_GET['oficina'])) {
 }
 
 // Vehículo
-if(isset($_GET['vehiculo'])) {
+elseif(isset($_GET['vehiculo'])) {
 	$vehiculo = $_GET['vehiculo'];
 	$usuarios = mysqli_query($conexion, "SELECT * FROM usuarios WHERE legislador = '$vehiculo' AND  fecha = '$fecha'");
 	while($campo = mysqli_fetch_array($usuarios)) {
@@ -153,7 +153,7 @@ if(isset($_GET['vehiculo'])) {
 		if($campo['vehiculo'] == 'NO') {
 			mysqli_query($conexion, "UPDATE usuarios SET vehiculo = 'SI', fecha = '$fecha' WHERE legislador = '$vehiculo' AND  fecha = '$fecha'");
 			echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
-		} elseif($campo['oficina'] == 'SI') {
+		} elseif($campo['vehiculo'] == 'SI') {
 			mysqli_query($conexion, "UPDATE usuarios SET vehiculo = 'NO', fecha = '$fecha' WHERE legislador = '$vehiculo' AND  fecha = '$fecha'");
 			echo '<script>window.location="./control#'.$campo['legislador'].'"</script>';
 		}
@@ -161,7 +161,7 @@ if(isset($_GET['vehiculo'])) {
 }
 
 // Legislador
-if(isset($_GET['legislador'])) {
+elseif(isset($_GET['legislador'])) {
 	$legislador = $_GET['legislador'];
 	date_default_timezone_set('America/Argentina/Buenos_Aires');
 	$fecha = date('Y-m-d');
@@ -364,6 +364,8 @@ echo '<script>window.location="./control"</script>';
 		</div>
 
 		</div>
+
+		<footer></footer>
 
 </body>
 </html>
