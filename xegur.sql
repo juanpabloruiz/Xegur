@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 18-03-2019 a las 11:59:18
--- Versión del servidor: 10.1.37-MariaDB
--- Versión de PHP: 7.0.33
+-- Servidor: localhost:3306
+-- Tiempo de generación: 24-03-2019 a las 14:55:04
+-- Versión del servidor: 5.7.25
+-- Versión de PHP: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,6 +47,26 @@ INSERT INTO `administradores` (`id_administrador`, `usuario`, `clave`, `cargo`) 
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `legisladores`
+--
+
+CREATE TABLE `legisladores` (
+  `id_legislador` int(133) NOT NULL,
+  `legislador` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `apellidos` varchar(255) NOT NULL,
+  `foto` varchar(255) NOT NULL,
+  `oficina` varchar(255) NOT NULL,
+  `telefonos` varchar(255) NOT NULL,
+  `vehiculo` varchar(255) NOT NULL,
+  `patente` varchar(255) NOT NULL,
+  `camara` varchar(255) NOT NULL,
+  `mandato` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `observaciones`
 --
 
@@ -75,7 +95,8 @@ INSERT INTO `observaciones` (`id_observaciones`, `detalles`, `fecha`) VALUES
 (897, '', '2019-03-12'),
 (898, 'estacionamiento-----jueves sesion 14 DE MARZO 11 hs /HUICI --SEWAR-ALEGRE-JAVIER SAENZ-VISCHY-MEIXNER-NANCY SAND-CENTURION-POZO-CHAIN-CARMONA-PELLEGRINI-CASSANI-MIÃ‘O-GAYA-SOTOMAYO-FLINTA-ANY PERYRA-DR.WISCHY-FABIO SOTO-GRACIELA RODRIGUEZ-\r\nMANIFESTACION EN LA CALLE BARRIOS DE PIE.', '2019-03-14'),
 (899, 'estacionamiento-15/03/2019\r\n---puchiarello-sotomayor-carmona-anita\r\nsalieron dos sillas del lado de dipuados \r\n\r\n', '2019-03-15'),
-(900, '', '2019-03-18');
+(900, '', '2019-03-18'),
+(901, '', '2019-03-24');
 
 -- --------------------------------------------------------
 
@@ -791,7 +812,53 @@ INSERT INTO `usuarios` (`id_usuario`, `oficina`, `vehiculo`, `legislador`, `cate
 (1287, 'NO', 'NO', 'POZO', 'diputado', 'AUSENTE', '', '', '', '2019-03-18'),
 (1288, 'NO', 'NO', 'RAMIREZ', 'diputado', 'AUSENTE', '', '', '', '2019-03-18'),
 (1289, 'NO', 'NO', 'ROTELA CAÃ‘ETE', 'diputado', 'AUSENTE', '', '', '', '2019-03-18'),
-(1290, 'NO', 'NO', 'VISCHI', 'diputado', 'AUSENTE', '', '', '', '2019-03-18');
+(1290, 'NO', 'NO', 'VISCHI', 'diputado', 'AUSENTE', '', '', '', '2019-03-18'),
+(1291, 'NO', 'NO', 'CANTEROS', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1292, 'NO', 'SI', 'ALTERATS', 'senador', 'AUSENTE', ' E S E S E', '', ' S', '2019-03-24'),
+(1293, 'NO', 'NO', 'BOFFIL', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1294, 'NO', 'NO', 'BREARD', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1295, 'NO', 'SI', 'COLOMBI', 'senador', 'PRESENTE', '', '', ' E', '2019-03-24'),
+(1296, 'NO', 'NO', 'DOS SANTOS', 'senador', 'PRESENTE', '', '', ' E', '2019-03-24'),
+(1297, 'NO', 'NO', 'SUAREZ', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1298, 'NO', 'NO', 'FLINTA', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1299, 'NO', 'NO', 'GIRAUD', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1300, 'NO', 'NO', 'INSAURRALDE', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1301, 'NO', 'NO', 'NAZAR', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1302, 'NO', 'NO', 'MARTINEZ LLANO', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1303, 'NO', 'NO', 'MIÑO', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1304, 'NO', 'NO', 'RODRIGUEZ', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1305, 'NO', 'NO', 'SAND GIORASI', 'senador', 'PRESENTE', '', '', ' E', '2019-03-24'),
+(1306, 'NO', 'NO', 'SEWARD', 'senador', 'AUSENTE', '', '', '', '2019-03-24'),
+(1307, 'NO', 'NO', 'ACEVEDO', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1308, 'NO', 'NO', 'AGUIRRE', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1309, 'NO', 'NO', 'BESTARD', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1310, 'NO', 'NO', 'CASSANI', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1311, 'NO', 'NO', 'BAEZ', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1312, 'NO', 'NO', 'CHAIN', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1313, 'NO', 'NO', 'BARRIONUEVO', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1314, 'NO', 'SI', 'FERNANDEZ AFFUR', 'diputado', 'AUSENTE', ' E', '', ' S E S E S E S E S E S', '2019-03-24'),
+(1315, 'NO', 'NO', 'GAYA', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1316, 'NO', 'SI', 'GARCIA', 'diputado', 'AUSENTE', ' E S E S E S', '', '', '2019-03-24'),
+(1317, 'NO', 'NO', 'GIRAUD CABRAL', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1318, 'NO', 'NO', 'LOCATELLI', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1319, 'NO', 'NO', 'LOPEZ', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1320, 'NO', 'NO', 'MEIXNER', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1321, 'SI', 'SI', 'MANCINI FRATTI', 'diputado', 'PRESENTE', ' E', '', '', '2019-03-24'),
+(1322, 'NO', 'NO', 'BASSI', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1323, 'NO', 'NO', 'MOLINA', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1324, 'NO', 'NO', 'CENTURION', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1325, 'NO', 'NO', 'MORTOLA', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1326, 'NO', 'NO', 'GODOY', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1327, 'NO', 'NO', 'CALVI', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1328, 'NO', 'NO', 'PACAYUT', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1329, 'NO', 'NO', 'PELLEGRINI', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1330, 'NO', 'NO', 'SAEZ', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1331, 'NO', 'NO', 'PEREYRA CEBREIRO', 'diputado', 'PRESENTE', ' E', '', '', '2019-03-24'),
+(1332, 'NO', 'SI', 'YARDIN', 'diputado', 'AUSENTE', ' E', '', ' S', '2019-03-24'),
+(1333, 'NO', 'NO', 'POZO', 'diputado', 'PRESENTE', '', '', ' E', '2019-03-24'),
+(1334, 'NO', 'NO', 'RAMIREZ', 'diputado', 'AUSENTE', '', '', '', '2019-03-24'),
+(1335, 'NO', 'NO', 'ROTELA CAÑETE', 'diputado', 'AUSENTE', ' E S E S E S', '', '', '2019-03-24'),
+(1336, 'NO', 'NO', 'VISCHI', 'diputado', 'PRESENTE', '', '', ' E', '2019-03-24');
 
 --
 -- Índices para tablas volcadas
@@ -802,6 +869,12 @@ INSERT INTO `usuarios` (`id_usuario`, `oficina`, `vehiculo`, `legislador`, `cate
 --
 ALTER TABLE `administradores`
   ADD PRIMARY KEY (`id_administrador`);
+
+--
+-- Indices de la tabla `legisladores`
+--
+ALTER TABLE `legisladores`
+  ADD PRIMARY KEY (`id_legislador`);
 
 --
 -- Indices de la tabla `observaciones`
@@ -826,16 +899,22 @@ ALTER TABLE `administradores`
   MODIFY `id_administrador` int(133) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `legisladores`
+--
+ALTER TABLE `legisladores`
+  MODIFY `id_legislador` int(133) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `observaciones`
 --
 ALTER TABLE `observaciones`
-  MODIFY `id_observaciones` int(133) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=901;
+  MODIFY `id_observaciones` int(133) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=902;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(133) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1291;
+  MODIFY `id_usuario` int(133) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1337;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
